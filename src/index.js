@@ -2,11 +2,11 @@
 
 
 window.loadSlider = function (json) {
-    console.log(json);
+    // console.log("JSON",json);
     const obj = JSON.parse(json);
-    console.log(obj);
+    // console.log(obj);
     const data = obj.data;
-    console.log(data);
+    // console.log('DATA',data);
 
     //set const div to a document element ID named slider
     const div = document.getElementById('slider');
@@ -20,7 +20,7 @@ window.loadSlider = function (json) {
         const maxVal = fieldData?.MaxValue || 100;
         const value = fieldData?.Value;
         const id = fieldData?.PrimaryKey;
-        console.log(id);
+        console.log('fieldData', fieldData);
          //create a document element named input and set it to const slider
     const slider = document.createElement('input');
 
@@ -56,13 +56,13 @@ window.loadSlider = function (json) {
     }
 
     //create a document element named label and set it to const label
-    const slider_1_label = document.createElement('label');
+    const slider_label = document.createElement('label');
     //set the innerHTML of label to 'Slider 1 How old are you?'
-    slider_1_label.innerHTML = `${text} <span id="slider_value_${id}" class='bg-primary text-white rounded p-1'>${slider.value}</span>`;
+    slider_label.innerHTML = `${text} <span id="slider_value_${id}" class='bg-primary text-white rounded p-1'>${slider.value}</span>`;
 
 
 
-    div.appendChild(slider_1_label);
+    div.appendChild(slider_label);
     div.appendChild(slider);
 
 
